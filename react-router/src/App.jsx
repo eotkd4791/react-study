@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Profile from './Profile';
 import HistorySample from './HistorySample';
+import WithRouterSample from './WithRouterSample';
 
 const App = () => {
   return (
@@ -24,12 +25,16 @@ const App = () => {
         <li>
           <Link to="/history">History 예제</Link>
         </li>
+        <li>
+          <Link to="/">History 예제</Link>
+        </li>
       </ul>
       < hr />
       <Route path="/" component={Home} exact={true}/>
       <Route path={['/about','/info']} component={About} />
       <Route path="/profile/:username" component={Profile} />
       <Route path="/history" component={HistorySample} />
+      <Route path="/withrouter" component={WithRouterSample} />
     </div>
   );
 };
