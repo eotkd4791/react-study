@@ -9,7 +9,7 @@ const App = () => {
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Route path="/" component={Home} exact/>
-      <Route path="/about" component={About}/>
+      <Route path={['/about', '/info']} component={About}/>
     </div>
   );
 };
