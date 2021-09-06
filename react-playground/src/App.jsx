@@ -1,16 +1,13 @@
 import React from 'react';
 import './App.css';
-import Reservation from './Reservation';
+import Calculator from './Calculator';
 
 class App extends React.Component {
-  constructor(prop) {
-    super(prop);
-  }
   render() {
     return (
       <div className='App'>
         <main>
-          <Reservation />
+          <Calculator />
         </main>
       </div>
     );
