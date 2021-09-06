@@ -1,18 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Clock from './Clock';
+import Reservation from './Reservation';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <main>
-      <Clock />
-      </main>
-    </div>
-  );
+class App extends React.Component {
+  constructor(prop) {
+    super(prop);
+  }
+  render() {
+    return (
+      <div className='App'>
+        <main>
+          <Reservation />
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;
