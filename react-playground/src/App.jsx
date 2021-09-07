@@ -1,21 +1,13 @@
 import React from 'react';
 import './App.css';
-import Dialog from './Dialog';
-
-function Contacts() {
-  return <div className='Contact'>Contact</div>;
-}
-
-function Chat() {
-  return <div className='Chat'>Chat</div>;
-}
+import FilterableProductTable from './FilterableProductTable';
 
 class App extends React.Component {
   render() {
     return (
       <div className='App'>
         <main>
-          <Dialog left={<Contacts />} right={<Chat />} />
+          <FilterableProductTable />
         </main>
       </div>
     );
