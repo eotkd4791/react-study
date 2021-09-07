@@ -42,7 +42,7 @@ export default class ProductTable extends Component {
 
   render() {
     const { categories } = this.state;
-    const { searchKeyword } = this.props;
+    const { searchKeyword, showOnlyInStock } = this.props;
 
     return (
       <table className='ProductTable'>
@@ -59,6 +59,7 @@ export default class ProductTable extends Component {
               key={index}
               products={categories[category]}
               searchKeyword={searchKeyword}
+              showOnlyInStock={showOnlyInStock}
             />
           ))}
         </tbody>

@@ -3,7 +3,7 @@ import ProductRow from './ProductRow';
 
 export default class ProductCategoryRow extends Component {
   render() {
-    const { searchKeyword } = this.props;
+    const { searchKeyword, showOnlyInStock } = this.props;
 
     return (
       <>
@@ -11,7 +11,7 @@ export default class ProductCategoryRow extends Component {
           <th colSpan='2'>{this.props.category}</th>
         </tr>
         {this.props.products.map((product, index) => (
-          <ProductRow key={index} product={product} searchKeyword={searchKeyword} />
+          <ProductRow key={index} product={product} searchKeyword={searchKeyword} showOnlyInStock={showOnlyInStock} />
         ))}
       </>
     );

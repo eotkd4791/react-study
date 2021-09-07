@@ -21,7 +21,7 @@ export default class FilterableProductTable extends Component {
     return (
       <div className='FilterableProductTable'>
         <SearchBar searchKeyword={searchKeyword} showOnlyInStock={showOnlyInStock} onChange={this.onChange} />
-        <ProductTable searchKeyword={searchKeyword} />
+        <ProductTable searchKeyword={searchKeyword} showOnlyInStock={showOnlyInStock} />
       </div>
     );
   }
