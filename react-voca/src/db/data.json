@@ -1,0 +1,124 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "day": 1
+    },
+    {
+      "id": 2,
+      "day": 2
+    },
+    {
+      "id": 3,
+      "day": 3
+    },
+    {
+      "day": 4,
+      "id": 4
+    },
+    {
+      "day": 5,
+      "id": 5
+    }
+  ],
+  "words": [
+    {
+      "id": 1,
+      "day": 1,
+      "eng": "book",
+      "kor": "책",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "day": 4,
+      "eng": "apple",
+      "kor": "사과",
+      "isDone": false
+    },
+    {
+      "id": 3,
+      "day": 2,
+      "eng": "car",
+      "kor": "자동차",
+      "isDone": false
+    },
+    {
+      "id": 5,
+      "day": 3,
+      "eng": "school",
+      "kor": "학교",
+      "isDone": false
+    },
+    {
+      "id": 6,
+      "day": 3,
+      "eng": "pencil",
+      "kor": "연필",
+      "isDone": false
+    },
+    {
+      "day": 3,
+      "eng": "window",
+      "kor": "창문",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "day": 3,
+      "eng": "house",
+      "kor": "집",
+      "isDone": false,
+      "id": 8
+    },
+    {
+      "day": 2,
+      "eng": "mouse",
+      "kor": "쥐",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "day": 4,
+      "eng": "monkey",
+      "kor": "원숭이",
+      "isDone": false,
+      "id": 10
+    },
+    {
+      "day": 4,
+      "eng": "melon",
+      "kor": "메론",
+      "isDone": false,
+      "id": 11
+    },
+    {
+      "day": 3,
+      "eng": "mango",
+      "kor": "망고",
+      "isDone": false,
+      "id": 12
+    },
+    {
+      "eng": "oraily",
+      "kor": "오라일리",
+      "day": "3",
+      "isDone": false,
+      "id": 13
+    },
+    {
+      "eng": "stef",
+      "kor": "유대상",
+      "day": "5",
+      "isDone": false,
+      "id": 14
+    },
+    {
+      "eng": "sharp",
+      "kor": "뾰족한",
+      "day": "1",
+      "isDone": false,
+      "id": 15
+    }
+  ]
+}
