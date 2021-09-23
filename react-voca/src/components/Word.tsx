@@ -1,6 +1,18 @@
 import { useState } from 'react';
 
-export default function Word(props) {
+export interface IWord {
+  day: string;
+  eng: string;
+  kor: string;
+  isDone: boolean;
+  id: number;
+}
+
+interface IProps {
+  word: IWord;
+}
+
+export default function Word(props: IProps) {
   const [word, setWords] = useState(props.word);
   const [isShow, setIsShow] = useState(false);
   const [isDone, setIsDone] = useState(word.isDone);
@@ -13,9 +25,9 @@ export default function Word(props) {
     fetch(`http://localhost:3001/words/${word.id}`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ ...word, isDone: !isDone }),
+      body: JSON.stringify({ ...word, isDone: !isDone })
     }).then((res) => res.ok && setIsDone(!isDone));
   }
 
@@ -23,7 +35,7 @@ export default function Word(props) {
     if (window.confirm('삭제하시겠습니까 ?')) {
       fetch(`http://localhost:3001/words/${word.id}`, { method: 'DELETE' }).then((res) => {
         if (res.ok) {
-          setWords({ id: 0 });
+          setWords({ ...word, id: 0 });
         }
       });
     }

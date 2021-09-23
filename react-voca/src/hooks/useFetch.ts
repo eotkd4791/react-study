@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react';
 
-export default function useFetch(url) {
+interface IDay {
+  id: number;
+  day: number;
+}
+
+interface IWord extends IDay {
+  eng: string;
+  kor: string;
+  isDone: boolean;
+}
+
+export default function useFetch(url: string): (IDay | IWord)[] {
   const [data, setData] = useState([]);
 
   useEffect(() => {

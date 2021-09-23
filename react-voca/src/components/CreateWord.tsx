@@ -1,35 +1,41 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import { IDay } from './DayList';
 
 export default function CreateWord() {
-  const days = useFetch('http://localhost:3001/days');
+  const days: IDay[] = useFetch('http://localhost:3001/days');
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
 
-  const engRef = useRef(null);
-  const korRef = useRef(null);
-  const dayRef = useRef(null);
+  const engRef = useRef<HTMLInputElement>(null);
+  const korRef = useRef<HTMLInputElement>(null);
+  const dayRef = useRef<HTMLSelectElement>(null);
 
-  function onSubmit(event) {
+  function onSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    if (!isLoading) {
+    if (!isLoading && engRef.current && korRef.current && dayRef.current) {
       setIsLoading(true);
+
+      const eng = engRef.current.value;
+      const kor = korRef.current.value;
+      const day = dayRef.current.value;
+
       fetch(`http://localhost:3001/words/`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          eng: engRef.current.value,
-          kor: korRef.current.value,
-          day: dayRef.current.value,
-          isDone: false,
-        }),
+          eng,
+          kor,
+          day,
+          isDone: false
+        })
       }).then((res) => {
         res.ok && alert('생성이 완료 되었습니다.');
-        history.push(`/day/${dayRef.current.value}`);
+        history.push(`/day/${day}`);
         setIsLoading(false);
       });
     }
