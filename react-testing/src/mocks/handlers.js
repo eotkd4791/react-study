@@ -1,8 +1,8 @@
 import { rest } from 'msw';
 
 const handlers = [
-  rest.get('http://localhost:5000/products', (req, res, ctx) => {
-    return res(
+  rest.get('http://localhost:5000/products', (req, res, ctx) =>
+    res(
       ctx.json([
         {
           name: 'America',
@@ -13,11 +13,11 @@ const handlers = [
           imagePath: 'images/england.jpeg',
         },
       ])
-    );
-  }),
-  rest.get('http://localhost:5000/options', (req, res, ctx) => {
-    return res(ctx.json([{ name: 'Insurance' }, { name: 'Dinner' }]));
-  }),
+    )
+  ),
+  rest.get('http://localhost:5000/options', (req, res, ctx) =>
+    res(ctx.json([{ name: 'Insurance' }, { name: 'Dinner' }]))
+  ),
 ];
 
 export default handlers;
