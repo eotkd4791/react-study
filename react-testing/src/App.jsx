@@ -1,10 +1,17 @@
+import { useState } from 'react';
 import OrderPage from './pages/OrderPage';
+import SummaryPage from './pages/SummaryPage';
+import CompletePage from './pages/CompletePage';
 import { OrderContextProvider } from './contexts/OrderContext';
 
 function App() {
+  const [step, setStep] = useState(0);
+
   return (
     <OrderContextProvider>
-      <OrderPage />
+      {step === 0 && <OrderPage setStep={setStep} />}
+      {step === 1 && <SummaryPage setStep={setStep} />}
+      {step === 2 && <CompletePage setStep={setStep} />}
     </OrderContextProvider>
   );
 }
