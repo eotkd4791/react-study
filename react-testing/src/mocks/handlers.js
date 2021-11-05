@@ -18,6 +18,16 @@ const handlers = [
   rest.get('http://localhost:5000/options', (req, res, ctx) =>
     res(ctx.json([{ name: 'Insurance' }, { name: 'Dinner' }]))
   ),
+  rest.post('http://localhost:5000/order', (req, res, ctx) =>
+    res(
+      ctx.json([
+        {
+          orderNumber: 13123123123,
+          price: 2000,
+        },
+      ])
+    )
+  ),
 ];
 
 export default handlers;
