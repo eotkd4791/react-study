@@ -4,7 +4,7 @@ import OrderContext from '../../contexts/OrderContext';
 import ErrorBanner from '../../components/ErrorBanner';
 
 const CompletePage = ({ setStep }) => {
-  const [orderDatas] = useContext(OrderContext);
+  const [orderDatas, , resetOrderDatas] = useContext(OrderContext);
   const [orderHistories, setOrderHistories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -38,6 +38,11 @@ const CompletePage = ({ setStep }) => {
     </tr>
   ));
 
+  const handleClick = () => {
+    setStep(0);
+    resetOrderDatas();
+  };
+
   return (
     <div style={{ textAlign: 'center' }}>
       <h2>주문을 성공했습니다.</h2>
@@ -52,7 +57,7 @@ const CompletePage = ({ setStep }) => {
           {orderTable}
         </tbody>
       </table>
-      <button onClick={() => setStep(0)}>첫페이지로</button>
+      <button onClick={handleClick}>첫페이지로</button>
     </div>
   );
 };

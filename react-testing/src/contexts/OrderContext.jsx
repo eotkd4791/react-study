@@ -27,6 +27,12 @@ export function OrderContextProvider(props) {
     total: 0,
   });
 
+  const resetOrderDatas = () =>
+    setOrderCounts({
+      products: new Map(),
+      options: new Map(),
+    });
+
   useEffect(() => {
     const productsTotal = calculateSubtotal('products', orderCounts);
     const optionsTotal = calculateSubtotal('options', orderCounts);
@@ -46,7 +52,7 @@ export function OrderContextProvider(props) {
       orderCountsMap.set(itemName, parseInt(newItemCount));
       setOrderCounts(newOrderCounts);
     }
-    return [{ ...orderCounts, totals }, updateItemCounts];
+    return [{ ...orderCounts, totals }, updateItemCounts, resetOrderDatas];
   }, [orderCounts, totals]);
 
   return <OrderContext.Provider value={value} {...props} />;
