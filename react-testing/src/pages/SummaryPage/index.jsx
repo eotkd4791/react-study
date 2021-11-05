@@ -5,7 +5,6 @@ const SummaryPage = ({ setStep }) => {
   const [checked, setChecked] = useState(false);
   const [orderDatas] = useContext(OrderContext);
 
-  console.log(orderDatas);
   const productArray = Array.from(orderDatas.products);
   const productList = productArray.map(([key, value]) => (
     <li key={key}>
