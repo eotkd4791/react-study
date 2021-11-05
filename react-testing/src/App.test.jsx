@@ -133,4 +133,8 @@ test('from order to order completion', async () => {
     name: '첫페이지로',
   });
   userEvent.click(firstPageButton);
+
+  await waitFor(() => {
+    screen.getByRole('spinbutton', { name: 'America' });
+  });
 });
